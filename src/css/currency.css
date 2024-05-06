@@ -7,7 +7,7 @@
   background-size: cover;
   height: 65vh;
   width: 100vw;
-  opacity: 0.85;
+  opacity: 1;
   top: 0;
 }
 
@@ -28,6 +28,11 @@ h4 {
   font-size: 1.5rem;
   font-weight: 600;
   font-family: Promo, Helvetica, Arial, sans-serif;
+}
+
+.toast-position {
+  top: 5rem !important;
+  color: green;
 }
 
 

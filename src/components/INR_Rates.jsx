@@ -31,7 +31,7 @@ function INR_Rates() {
     setAud(ans.data.conversion_rates.AUD);
     setEuro(ans.data.conversion_rates.EUR);
   }
-  useEffect(()=>{api()},[]);
+  // useEffect(()=>{api()},[]);
   return (
     <div className='inr-main'>
       <marquee className="marquee" behavior='alternate'><FaDollarSign /> today</marquee>

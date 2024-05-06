@@ -4,11 +4,9 @@
     gap: 20px;
     width: 100vw;
     height: 25vh;
-    /* margin-left: 22%; */
     font-size: 1.3rem;
     font-weight: 700;
     background-color: #eff2f5;
-    /* margin-top: 200px; */
 }
 .marquee{
     color: black;
