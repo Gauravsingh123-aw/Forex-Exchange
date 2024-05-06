@@ -30,7 +30,8 @@ function dashboard() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="dark"
+        
+        
       />
 
     </div>

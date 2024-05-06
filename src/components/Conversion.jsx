@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import Main_context from '../context/main_context';
 import { useContext } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../css/conversion.css'
 
 function Conversion() {
@@ -31,7 +33,21 @@ function Conversion() {
     
     function handleSubmit(event){
         event.preventDefault();
-        console.log(event);
+        if(base=="" ){
+          toast("enter the base currency",{
+            position:"bottom-right"
+          });
+        }
+        else if(to===""){
+          toast.warn("enter currency you wish to convert!",{
+            position:"bottom-right"
+          })
+        }
+        else if(amount===0){
+          toast.warn("enter amount",{
+            position:"bottom-right"
+          })
+        }
         handleLogic(base,to,amount);
     }
 
@@ -48,6 +64,7 @@ function Conversion() {
         <form onSubmit={handleSubmit} className='form-act'>
             <label>Choose Base currency</label>
             <select name='bases_curr' onChange={handlebase}>
+              <option value={null}></option>
             {
               Object.keys(data).map(key=>( 
                       <option key={key} value={key}>{key}</option> 
@@ -55,6 +72,7 @@ function Conversion() {
             }</select><br/>
             <label>Convert to </label>
             <select name='to_curr' onChange={handleto}>
+            <option value={null}></option>
             {
               Object.keys(data).map(key=>(
                       <option key={key} value={key}>{key}</option>              
@@ -68,6 +86,18 @@ function Conversion() {
            
         </form>
       <div className='result-div'>{resSymbol} {result}</div>
+      <ToastContainer 
+      className="toast-position"
+      position="top-center"
+      autoClose={2000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      />
     </div>
   )
 }

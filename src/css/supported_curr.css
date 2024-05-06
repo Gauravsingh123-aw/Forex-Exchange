@@ -6,6 +6,8 @@
     align-items: center;
     width: 100vw;
     padding-top: 40px;
+    background-color: #3d404ee3;
+    color: white     ;
 }
 .row{
     display: flex;
